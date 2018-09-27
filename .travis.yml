@@ -2,7 +2,7 @@ language: julia
 os:
   - linux
 julia:
-  - 0.7
+  - 1.0
 notifications:
   email: false
 git:
@@ -29,12 +29,12 @@ script:
 deploy:
     provider: releases
     api_key:
-        # Note; this api_key is only valid for juan-pablo-vielma/COINLapackBuilder; you need
+        # Note; this api_key is only valid for JuliaOpt/COINLapackBuilder; you need
         # to make your own: https://docs.travis-ci.com/user/deployment/releases/
         secure: X7aOwqXcP1FpRBfLjHU7qxJq4/uW8Wnrgk0oiP2Bx3wgMgcaoNcnqULLEJvWeSyRbSmo79AKh02zkamKWwHJix3F+oemF7OmiqJRo+Wr5Kw9x3OzpsgCT/zzp4056ULDOSOo2u5mHylT0s3nK09PdQMXDh5BrWiSrGg0+8Qlgx3dAs/bMXQCTyadYKXjxrU1XA0U7oG9AgYAmg5ZI32guS/gHJ1tRY+opB5IcCjDHNBWg9lCLyWZdcg4jkKDFNu7/WjGvTq83iDFk7+xXKMnDh9AcYNwyDiD6zLk5TONH/0yj2k7JFJkBOqyllHA7EqPdcuGWvdjaNmNILz3LMfD1aIO5aBPSEMfGPhMYqYbU5eCzAiPlti9i0OcnnxTs3sDGtDJFh5K3QbDJ21EsgXjD6AtvZ/2sQ5qyAkgsr/P2RHjoBO4mMS7MNARwXMWfdAMlG2CM3eoA5bRE7Cuso3Ll6MOIZnQCP/vefdGU8HvV52Z5Z6xdiQ0fkqOVQCnPyLQ28xl1PGQW7GpXtWp1sGNwTzvW17702lmqFVjhKo/Dl0vDk1x7wuq3cXcmiafKdtRz7n3Nf2vM2owOoaUQuEeoJ42nNLrw/vUDsiDdAlYV7RnJLsPKTIbbTjGCyAgE44bLvmEkOrcqxisV9Z/3iM3P+2g+7m9EqYI1gTTtUdmyc0=
     file_glob: true
     file: products/*
     skip_cleanup: true
     on:
-        repo: juan-pablo-vielma/COINLapackBuilder
+        repo: JuliaOpt/COINLapackBuilder
         tags: true
