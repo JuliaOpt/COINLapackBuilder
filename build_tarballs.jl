@@ -18,12 +18,18 @@ cd $WORKSPACE/srcdir
 cd ThirdParty-Lapack-releases-1.5.6/
 ./get.Lapack 
 update_configure_scripts
+for path in ${LD_LIBRARY_PATH//:/ }; do
+    for file in $(ls $path/*.la); do
+        echo "$file"
+        baddir=$(sed -n "s|libdir=||p" $file)
+        sed -i~ -e "s|$baddir|'$path'|g" $file
+    done
+done
 mkdir build
 cd build/
-../configure --prefix=$prefix --with-pic --disable-pkg-config --with-blas="$prefix/lib/libcoinblas.a -lgfortran" --host=${target} --enable-shared --enable-static --enable-dependency-linking lt_cv_deplibs_check_method=pass_all
+../configure --prefix=$prefix --with-pic --disable-pkg-config --with-blas="-L$prefix/lib -lcoinblas" --host=${target} --enable-shared --disable-static --enable-dependency-linking lt_cv_deplibs_check_method=pass_all
 make -j${nproc}
 make install
-
 """
 
 # These are the platforms we will build for by default, unless further
@@ -42,6 +48,7 @@ platforms = [
     Windows(:i686),
     Windows(:x86_64)
 ]
+platforms = expand_gcc_versions(platforms)
 
 # The products that we will ensure are always built
 products(prefix) = [
