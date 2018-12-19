@@ -38,7 +38,7 @@ fi
 
 ## DYNAMIC BUILD START
 #../configure --prefix=$prefix --with-pic --disable-pkg-config  --host=${target} --enable-shared --disable-static --enable-dependency-linking lt_cv_deplibs_check_method=pass_all \
---with-blas="-L$prefix/lib -lcoinblas"
+#--with-blas="-L$prefix/lib -lcoinblas"
 ## DYNAMIC BUILD END
 
 
