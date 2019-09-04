@@ -15,7 +15,7 @@ sources = [
 # Bash recipe for building across all platforms
 script = raw"""
 cd $WORKSPACE/srcdir
-cd ThirdParty-Lapack-releases-1.5.6/
+cd ThirdParty-Lapack-releases-1.6.0/
 ./get.Lapack
 update_configure_scripts
 for path in ${LD_LIBRARY_PATH//:/ }; do
