@@ -3,12 +3,12 @@
 using BinaryBuilder
 
 name = "COINLapackBuilder"
-version = v"1.5.6"
+version = v"1.6.0"
 
 # Collection of sources required to build COINLapackBuilder
 sources = [
-    "https://github.com/coin-or-tools/ThirdParty-Lapack/archive/releases/1.5.6.tar.gz" =>
-    "c625dbb227e54e496430ffa708ddf23df5dbf173a0fcf570e1c249e13e411ba1",
+    "https://github.com/coin-or-tools/ThirdParty-Lapack/archive/releases/1.6.0.tar.gz" =>
+    "22222bc95a3c4135b676943c8fb28ab6f8da75e3e1ad309793609b5900a28661",
 
 ]
 
